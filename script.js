@@ -1,4 +1,6 @@
+
 //your code here
+console.log(document.getElementsByTagName('input')[0]);
 
 let arrRope = [];
 function ropes(arr, n){
