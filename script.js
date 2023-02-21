@@ -1,24 +1,46 @@
 
 //your code here
-console.log(document.getElementsByTagName('input')[0]);
+// add submit event to the form element
+let formEle = document.getElementById('form');
+formEle.addEventListener('submit' , ropes);
 
-let arrRope = [];
-function ropes(arr, n){
-	while(arr.length != 0){ 
+
+// function that runs on submit event
+function ropes(e){
+	e.preventDefault();
+	console.log("hello");
+	const input = document.getElementById('form').elements[0].value;
+	console.log(input);
+
+   const arr = input.split(",");
+   console.log(arr);
+
+   for(let i=0; i<arr.length; i++){
+	 arr[i] = parseInt(arr[i]);
+   }
+
+   console.log(arr);
+
+   let arrRope = [];
+
+	while(arr.length != 1){ 
     let add = 0;
 	for(let i=1; i<=2; i++){
 	//find 1st min value
-	let min1 = Math.max();
+	let min1 = arr[0];
 	let minIndex = 0;
-	arr.forEach(function (value,index){
-		if(value < min1){ 
-			min1 = value;
+	for(let index=1; index<arr.length; index++){
+		if(arr[index] < min1){ 
+			min1 = arr[index];
 			minIndex = index;
 		}
 	}
-   let minRope1 = arr.splice(minIndex,1);
-	add = add + minRope1;
+    
+	add = add + min1;
+    arr.splice(minIndex,1);
 	}
+
+	arr.push(add);
 
 	arrRope.push(add);
 	}
@@ -28,8 +50,7 @@ function ropes(arr, n){
 	arrRope.forEach((value) => {
 		cost = cost + value;
 	})
+	console.log(cost);
 
 	document.getElementById('result').innerHTML = cost;
-				
-	)
 }
