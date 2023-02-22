@@ -8,9 +8,8 @@ formEle.addEventListener('submit' , ropes);
 // function that runs on submit event
 function ropes(e){
 	e.preventDefault();
-	console.log("hello");
+
 	const input = document.getElementById('form').elements[0].value;
-	console.log(input);
 
    const arr = input.split(",");
    console.log(arr);
@@ -19,7 +18,6 @@ function ropes(e){
 	 arr[i] = parseInt(arr[i]);
    }
 
-   console.log(arr);
 
    let arrRope = [];
 
