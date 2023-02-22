@@ -51,4 +51,5 @@ function ropes(e){
 	console.log(cost);
 
 	document.getElementById('result').innerHTML = cost;
+	console.log("hello");
 }
