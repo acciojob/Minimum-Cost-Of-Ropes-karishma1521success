@@ -6,8 +6,8 @@ formEle.addEventListener('submit' , ropes);
 
 
 // function that runs on submit event
-function ropes(e){
-	e.preventDefault();
+function ropes(event){
+	event.preventDefault();
 
 	const input = document.getElementById('form').elements[0].value;
 
